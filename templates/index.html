@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consistent Character Comic Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Consistent Character Comic Generator</h1>
+        <p>Built for the Nano Banana Hackathon</p>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Create Your Comic</h2>
+            <form id="comic-form">
+                <div class="form-group">
+                    <label for="character">Character Description</label>
+                    <input type="text" id="character" name="character" placeholder="e.g., A brave squirrel knight with a tiny acorn helmet" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="style">Art Style</label>
+                    <input type="text" id="style" name="style" placeholder="e.g., Detailed fantasy illustration, black and white" required>
+                </div>
+
+                <div class="panels-group">
+                    <label>Panel Prompts</label>
+                    <div id="panels-container">
+                        <textarea name="panels" placeholder="Panel 1: The squirrel knight stands proudly on a mossy branch."></textarea>
+                    </div>
+                    <div class="panel-buttons">
+                        <button type="button" id="add-panel-btn">+ Add Panel</button>
+                        <button type="button" id="remove-panel-btn">- Remove Panel</button>
+                    </div>
+                </div>
+
+                <button type="submit" id="generate-btn">Generate Comic</button>
+            </form>
+        </div>
+
+        <div class="results-container">
+            <h2>Your Comic</h2>
+            <div id="loading-indicator" style="display: none;">
+                <p>Generating your comic... this may take a moment!</p>
+            </div>
+            <div id="comic-strip" class="comic-strip-grid">
+                <!-- Generated images will be inserted here -->
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
